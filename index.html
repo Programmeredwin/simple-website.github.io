@@ -1,0 +1,112 @@
+<section id="order">
+    <h2>Place an Order</h2>
+    <form id="order-form">
+        <label for="flavor-select">Select a Flavor:</label>
+        <select id="flavor-select" name="flavor">
+            <option value="Orange">Orange</option>
+            <option value="Passion">Passion</option>
+            <option value="Blackcurrant">Blackcurrant</option>
+        </select>
+        <label for="quantity">Quantity (in bottles):</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <input type="submit" value="Place Order">
+    </form>
+    <p id="order-confirmation"></p>
+</section>
+
+<footer>
+    <p>&copy; 2023 Edd's Juice</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const orderForm = document.getElementById("order-form");
+        const orderConfirmation = document.getElementById("order-confirmation");
+
+        orderForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting and reloading the page
+
+            const flavorSelect = document.getElementById("flavor-select");
+            const quantityInput = document.getElementById("quantity");
+
+            const selectedFlavor = flavorSelect.value;
+            const orderQuantity = parseInt(quantityInput.value, 10);
+
+            if (orderQuantity <= 0) {
+                orderConfirmation.textContent = "Please enter a valid quantity.";
+            } else {
+                orderConfirmation.textContent = `Thank you for ordering ${orderQuantity} bottles of ${selectedFlavor} juice! We'll contact you soon.`;
+                // You can add code here to send the order information to your backend for processing.
+            }
+
+            // Reset the form
+            orderForm.reset();
+        });
+    });
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edd's Juice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1> Edd's Juice</h1>
+        <p>Your source for delicious, refreshing juices</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#flavors">Our Flavors</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>About Us</h2>
+        <p>Edd's Juice is dedicated to providing you with the finest fruit juices made from the freshest ingredients. Our juices are available in three delightful flavors: Orange, Passion, and Blackcurrant.</p>
+    </section>
+
+    <section id="flavors">
+        <h2>Our Flavors</h2>
+        <div class="flavor">
+            <img src="c:\Users\HP SFF SYSTEM\Downloads/Orange.jpg" alt="Orange Juice">
+            <h3>Orange Flavor</h3>
+            <p>Price: KES 20 per 250ml bottle</p>
+        </div>
+        <div class="flavor">
+            <img src="c:\Users\HP SFF SYSTEM\Downloads/Passion.jpg" alt="Passion Fruit Juice">
+            <h3>Passion Flavor</h3>
+            <p>Price: KES 20 per 250ml bottle</p>
+        </div>
+        <div class="flavor">
+            <img src="c:\Users\HP SFF SYSTEM\Downloads/Blackcurrant.jpg" alt="Blackcurrant Juice">
+            <h3>Blackcurrant Flavor</h3>
+            <p>Price: KES 20 per 250ml bottle</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to place an order, please contact us at:</p>
+        <address>
+            Email: <a href="mailto:emuiruri074@gmail.com">emuiruri074@gmail.com</a><br>
+            Phone: <a href="tel:+254741621532">0741621532</a><br>
+            Address: Ruthiruini, Kiambu, Kenya
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Edd's Juice</p>
+    </footer>
+</body>
+</html>
+
+
